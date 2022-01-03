@@ -1,0 +1,60 @@
+Comparing source compatibility of  against 
++++  NEW CLASS: PUBLIC(+) FINAL(+) io.opentelemetry.instrumentation.api.appender.GlobalLogEmitterProvider  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.appender.LogEmitterProvider get()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) void resetForTest()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) void set(io.opentelemetry.instrumentation.api.appender.LogEmitterProvider)
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.appender.LogBuilder  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) void emit()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.appender.LogBuilder setAttributes(io.opentelemetry.api.common.Attributes)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.appender.LogBuilder setBody(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.appender.LogBuilder setContext(io.opentelemetry.context.Context)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.appender.LogBuilder setEpoch(long, java.util.concurrent.TimeUnit)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.appender.LogBuilder setEpoch(java.time.Instant)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.appender.LogBuilder setName(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.appender.LogBuilder setSeverity(io.opentelemetry.instrumentation.api.appender.Severity)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.appender.LogBuilder setSeverityText(java.lang.String)
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.appender.LogEmitter  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.appender.LogBuilder logBuilder()
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.appender.LogEmitterBuilder  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.appender.LogEmitter build()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.appender.LogEmitterBuilder setInstrumentationVersion(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.appender.LogEmitterBuilder setSchemaUrl(java.lang.String)
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.appender.LogEmitterProvider  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.appender.LogEmitterBuilder logEmitterBuilder(java.lang.String)
++++  NEW ENUM: PUBLIC(+) FINAL(+) io.opentelemetry.instrumentation.api.appender.Severity  (compatible)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: java.lang.Comparable
+	+++  NEW INTERFACE: java.io.Serializable
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.appender.Severity WARN2
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.appender.Severity WARN3
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.appender.Severity WARN4
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.appender.Severity INFO
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.appender.Severity TRACE2
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.appender.Severity DEBUG4
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.appender.Severity DEBUG3
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.appender.Severity TRACE4
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.appender.Severity TRACE3
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.appender.Severity ERROR
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.appender.Severity FATAL
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.appender.Severity TRACE
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.appender.Severity FATAL2
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.appender.Severity FATAL3
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.appender.Severity ERROR2
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.appender.Severity ERROR3
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.appender.Severity ERROR4
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.appender.Severity DEBUG2
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.appender.Severity INFO3
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.appender.Severity DEBUG
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.appender.Severity INFO2
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.appender.Severity WARN
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.appender.Severity INFO4
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.appender.Severity UNDEFINED_SEVERITY_NUMBER
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.appender.Severity FATAL4
+	+++  NEW METHOD: PUBLIC(+) int getSeverityNumber()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.appender.Severity valueOf(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.appender.Severity[] values()

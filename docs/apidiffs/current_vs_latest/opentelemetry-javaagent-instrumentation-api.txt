@@ -1,0 +1,35 @@
+Comparing source compatibility of  against 
++++  NEW CLASS: PUBLIC(+) FINAL(+) io.opentelemetry.javaagent.instrumentation.api.CallDepth  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) int decrementAndGet()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.javaagent.instrumentation.api.CallDepth forClass(java.lang.Class)
+	+++  NEW METHOD: PUBLIC(+) int get()
+		+++  NEW ANNOTATION: java.lang.Deprecated
+	+++  NEW METHOD: PUBLIC(+) int getAndIncrement()
+	+++  NEW METHOD: PUBLIC(+) void reset()
+		+++  NEW ANNOTATION: java.lang.Deprecated
++++  NEW CLASS: PUBLIC(+) FINAL(+) io.opentelemetry.javaagent.instrumentation.api.concurrent.ExecutorAdviceHelper  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.javaagent.instrumentation.api.concurrent.PropagatedContext attachContextToTask(io.opentelemetry.context.Context, io.opentelemetry.instrumentation.api.field.VirtualField, java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) void cleanPropagatedContext(io.opentelemetry.instrumentation.api.field.VirtualField, java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) void cleanUpAfterSubmit(io.opentelemetry.javaagent.instrumentation.api.concurrent.PropagatedContext, java.lang.Throwable)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) boolean shouldPropagateContext(io.opentelemetry.context.Context, java.lang.Object)
++++  NEW CLASS: PUBLIC(+) FINAL(+) io.opentelemetry.javaagent.instrumentation.api.concurrent.PropagatedContext  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
++++  NEW CLASS: PUBLIC(+) FINAL(+) io.opentelemetry.javaagent.instrumentation.api.concurrent.TaskAdviceHelper  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.context.Scope makePropagatedContextCurrent(io.opentelemetry.instrumentation.api.field.VirtualField, java.lang.Object)
+		+++  NEW ANNOTATION: javax.annotation.Nullable
++++  NEW CLASS: PUBLIC(+) FINAL(+) io.opentelemetry.javaagent.instrumentation.api.Java8BytecodeBridge  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.context.Context currentContext()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.api.trace.Span currentSpan()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.context.Context rootContext()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.api.trace.Span spanFromContext(io.opentelemetry.context.Context)
++++  NEW CLASS: PUBLIC(+) FINAL(+) io.opentelemetry.javaagent.instrumentation.api.OpenTelemetrySdkAccess  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) void forceFlush(int, java.util.concurrent.TimeUnit)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) void internalSetForceFlush(io.opentelemetry.javaagent.instrumentation.api.OpenTelemetrySdkAccess$ForceFlusher)
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) STATIC(+) io.opentelemetry.javaagent.instrumentation.api.OpenTelemetrySdkAccess$ForceFlusher  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) void run(int, java.util.concurrent.TimeUnit)

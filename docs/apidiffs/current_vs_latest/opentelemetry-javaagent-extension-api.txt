@@ -1,0 +1,66 @@
+Comparing source compatibility of  against 
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) io.opentelemetry.javaagent.extension.AgentListener  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: io.opentelemetry.javaagent.extension.Ordered
+	+++  NEW METHOD: PUBLIC(+) void afterAgent(io.opentelemetry.instrumentation.api.config.Config)
+		+++  NEW ANNOTATION: java.lang.Deprecated
+	+++  NEW METHOD: PUBLIC(+) void afterAgent(io.opentelemetry.instrumentation.api.config.Config, io.opentelemetry.sdk.autoconfigure.AutoConfiguredOpenTelemetrySdk)
+	+++  NEW METHOD: PUBLIC(+) void beforeAgent(io.opentelemetry.instrumentation.api.config.Config)
+		+++  NEW ANNOTATION: java.lang.Deprecated
+	+++  NEW METHOD: PUBLIC(+) void beforeAgent(io.opentelemetry.instrumentation.api.config.Config, io.opentelemetry.sdk.autoconfigure.AutoConfiguredOpenTelemetrySdk)
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) io.opentelemetry.javaagent.extension.bootstrap.BootstrapPackagesBuilder  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) io.opentelemetry.javaagent.extension.bootstrap.BootstrapPackagesBuilder add(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) io.opentelemetry.javaagent.extension.bootstrap.BootstrapPackagesBuilder addAll(java.util.Collection)
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) io.opentelemetry.javaagent.extension.bootstrap.BootstrapPackagesConfigurer  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) void configure(io.opentelemetry.instrumentation.api.config.Config, io.opentelemetry.javaagent.extension.bootstrap.BootstrapPackagesBuilder)
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) io.opentelemetry.javaagent.extension.config.ConfigPropertySource  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: io.opentelemetry.javaagent.extension.Ordered
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.util.Map getProperties()
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) io.opentelemetry.javaagent.extension.ignore.IgnoredTypesBuilder  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) io.opentelemetry.javaagent.extension.ignore.IgnoredTypesBuilder allowClass(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) io.opentelemetry.javaagent.extension.ignore.IgnoredTypesBuilder allowClassLoader(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) io.opentelemetry.javaagent.extension.ignore.IgnoredTypesBuilder ignoreClass(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) io.opentelemetry.javaagent.extension.ignore.IgnoredTypesBuilder ignoreClassLoader(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) io.opentelemetry.javaagent.extension.ignore.IgnoredTypesBuilder ignoreTaskClass(java.lang.String)
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) io.opentelemetry.javaagent.extension.ignore.IgnoredTypesConfigurer  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: io.opentelemetry.javaagent.extension.Ordered
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) void configure(io.opentelemetry.instrumentation.api.config.Config, io.opentelemetry.javaagent.extension.ignore.IgnoredTypesBuilder)
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) io.opentelemetry.javaagent.extension.instrumentation.HelperResourceBuilder  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) void register(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) void register(java.lang.String, java.lang.String)
++++  NEW CLASS: PUBLIC(+) ABSTRACT(+) io.opentelemetry.javaagent.extension.instrumentation.InstrumentationModule  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: io.opentelemetry.javaagent.extension.Ordered
+	+++  NEW METHOD: PUBLIC(+) net.bytebuddy.matcher.ElementMatcher$Junction classLoaderMatcher()
+	+++  NEW METHOD: PUBLIC(+) java.util.List getAdditionalHelperClassNames()
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) java.lang.String instrumentationName()
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) boolean isEnabled()
+	+++  NEW METHOD: PUBLIC(+) boolean isHelperClass(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) void registerHelperResources(io.opentelemetry.javaagent.extension.instrumentation.HelperResourceBuilder)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.util.List typeInstrumentations()
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) io.opentelemetry.javaagent.extension.instrumentation.TypeInstrumentation  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) net.bytebuddy.matcher.ElementMatcher classLoaderOptimization()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) void transform(io.opentelemetry.javaagent.extension.instrumentation.TypeTransformer)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) net.bytebuddy.matcher.ElementMatcher typeMatcher()
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) io.opentelemetry.javaagent.extension.instrumentation.TypeTransformer  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) void applyAdviceToMethod(net.bytebuddy.matcher.ElementMatcher, java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) void applyTransformer(net.bytebuddy.agent.builder.AgentBuilder$Transformer)
++++  NEW CLASS: PUBLIC(+) FINAL(+) io.opentelemetry.javaagent.extension.matcher.AgentElementMatchers  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) net.bytebuddy.matcher.ElementMatcher$Junction extendsClass(net.bytebuddy.matcher.ElementMatcher)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) net.bytebuddy.matcher.ElementMatcher$Junction hasClassesNamed(java.lang.String[])
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) net.bytebuddy.matcher.ElementMatcher$Junction hasSuperMethod(net.bytebuddy.matcher.ElementMatcher)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) net.bytebuddy.matcher.ElementMatcher$Junction hasSuperType(net.bytebuddy.matcher.ElementMatcher)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) net.bytebuddy.matcher.ElementMatcher$Junction implementsInterface(net.bytebuddy.matcher.ElementMatcher)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) net.bytebuddy.matcher.ElementMatcher$Junction methodIsDeclaredByType(net.bytebuddy.matcher.ElementMatcher)
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) io.opentelemetry.javaagent.extension.Ordered  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) int order()

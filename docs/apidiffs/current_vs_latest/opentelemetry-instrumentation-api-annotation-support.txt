@@ -1,0 +1,63 @@
+Comparing source compatibility of  against 
++++  NEW CLASS: PUBLIC(+) io.opentelemetry.instrumentation.api.annotation.support.AnnotationReflectionHelper  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) java.util.function.Function bindAnnotationElementMethod(java.lang.invoke.MethodHandles$Lookup, java.lang.Class, java.lang.String, java.lang.Class)
+		+++  NEW EXCEPTION: java.lang.Throwable
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) java.lang.Class forNameOrNull(java.lang.ClassLoader, java.lang.String)
+		+++  NEW ANNOTATION: javax.annotation.Nullable
++++  NEW CLASS: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.annotation.support.async.AsyncOperationEndStrategies  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW CONSTRUCTOR: PUBLIC(+) AsyncOperationEndStrategies()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.annotation.support.async.AsyncOperationEndStrategies instance()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) void internalSetStrategiesStorage(io.opentelemetry.instrumentation.api.annotation.support.async.AsyncOperationEndStrategies)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) void registerStrategy(io.opentelemetry.instrumentation.api.annotation.support.async.AsyncOperationEndStrategy)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.annotation.support.async.AsyncOperationEndStrategy resolveStrategy(java.lang.Class)
+		+++  NEW ANNOTATION: javax.annotation.Nullable
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) void unregisterStrategy(io.opentelemetry.instrumentation.api.annotation.support.async.AsyncOperationEndStrategy)
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.annotation.support.async.AsyncOperationEndStrategy  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.lang.Object end(io.opentelemetry.instrumentation.api.instrumenter.Instrumenter, io.opentelemetry.context.Context, java.lang.Object, java.lang.Object, java.lang.Class)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) boolean supports(java.lang.Class)
++++  NEW CLASS: PUBLIC(+) FINAL(+) io.opentelemetry.instrumentation.api.annotation.support.async.AsyncOperationEndSupport  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) java.lang.Object asyncEnd(io.opentelemetry.context.Context, java.lang.Object, java.lang.Object, java.lang.Throwable)
+		+++  NEW ANNOTATION: javax.annotation.Nullable
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.annotation.support.async.AsyncOperationEndSupport create(io.opentelemetry.instrumentation.api.instrumenter.Instrumenter, java.lang.Class, java.lang.Class)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) java.lang.Object tryToGetResponse(java.lang.Class, java.lang.Object)
+		+++  NEW ANNOTATION: javax.annotation.Nullable
++++  NEW ENUM: PUBLIC(+) FINAL(+) io.opentelemetry.instrumentation.api.annotation.support.async.Jdk8AsyncOperationEndStrategy  (compatible)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: io.opentelemetry.instrumentation.api.annotation.support.async.AsyncOperationEndStrategy
+	+++  NEW INTERFACE: java.lang.Comparable
+	+++  NEW INTERFACE: java.io.Serializable
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.annotation.support.async.Jdk8AsyncOperationEndStrategy INSTANCE
+	+++  NEW METHOD: PUBLIC(+) java.lang.Object end(io.opentelemetry.instrumentation.api.instrumenter.Instrumenter, io.opentelemetry.context.Context, java.lang.Object, java.lang.Object, java.lang.Class)
+	+++  NEW METHOD: PUBLIC(+) boolean supports(java.lang.Class)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.annotation.support.async.Jdk8AsyncOperationEndStrategy valueOf(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.annotation.support.async.Jdk8AsyncOperationEndStrategy[] values()
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.annotation.support.AttributeBinding  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) void apply(io.opentelemetry.instrumentation.api.tracer.AttributeSetter, java.lang.Object)
+	+++  NEW ANNOTATION: java.lang.FunctionalInterface
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.annotation.support.AttributeBindings  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) void apply(io.opentelemetry.instrumentation.api.tracer.AttributeSetter, java.lang.Object[])
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) boolean isEmpty()
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.annotation.support.MethodArgumentsExtractor  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.lang.Object[] extract(java.lang.Object)
+	+++  NEW ANNOTATION: java.lang.FunctionalInterface
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.annotation.support.MethodExtractor  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.lang.reflect.Method extract(java.lang.Object)
+	+++  NEW ANNOTATION: java.lang.FunctionalInterface
++++  NEW CLASS: PUBLIC(+) FINAL(+) io.opentelemetry.instrumentation.api.annotation.support.MethodSpanAttributesExtractor  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.annotation.support.MethodSpanAttributesExtractor newInstance(io.opentelemetry.instrumentation.api.annotation.support.MethodExtractor, io.opentelemetry.instrumentation.api.annotation.support.ParameterAttributeNamesExtractor, io.opentelemetry.instrumentation.api.annotation.support.MethodArgumentsExtractor)
+	+++  NEW METHOD: PUBLIC(+) void onEnd(io.opentelemetry.api.common.AttributesBuilder, java.lang.Object, java.lang.Object, java.lang.Throwable)
+	+++  NEW METHOD: PUBLIC(+) void onStart(io.opentelemetry.api.common.AttributesBuilder, java.lang.Object)
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.annotation.support.ParameterAttributeNamesExtractor  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.lang.String[] extract(java.lang.reflect.Method, java.lang.reflect.Parameter[])
+		+++  NEW ANNOTATION: javax.annotation.Nullable
+	+++  NEW ANNOTATION: java.lang.FunctionalInterface

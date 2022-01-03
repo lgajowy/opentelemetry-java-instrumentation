@@ -1,0 +1,545 @@
+Comparing source compatibility of  against 
++++  NEW ANNOTATION: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.annotations.UnstableApi  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: java.lang.annotation.Annotation
+	+++  NEW ANNOTATION: java.lang.annotation.Target
+		+++  NEW ELEMENT: value=java.lang.annotation.ElementType.ANNOTATION_TYPE,java.lang.annotation.ElementType.CONSTRUCTOR,java.lang.annotation.ElementType.METHOD,java.lang.annotation.ElementType.TYPE,java.lang.annotation.ElementType.PACKAGE (+)
+	+++  NEW ANNOTATION: java.lang.annotation.Documented
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.cache.Cache  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.cache.Cache bounded(int)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.lang.Object computeIfAbsent(java.lang.Object, java.util.function.Function)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.lang.Object get(java.lang.Object)
+		+++  NEW ANNOTATION: javax.annotation.Nullable
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) void put(java.lang.Object, java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) void remove(java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.cache.Cache weak()
++++  NEW CLASS: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.config.Config  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.config.ConfigBuilder builder()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.config.Config get()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.util.Map getAllProperties()
+	+++  NEW METHOD: PUBLIC(+) java.lang.Boolean getBoolean(java.lang.String)
+		+++  NEW ANNOTATION: java.lang.Deprecated
+		+++  NEW ANNOTATION: javax.annotation.Nullable
+	+++  NEW METHOD: PUBLIC(+) boolean getBoolean(java.lang.String, boolean)
+	+++  NEW METHOD: PUBLIC(+) java.lang.Double getDouble(java.lang.String)
+		+++  NEW ANNOTATION: java.lang.Deprecated
+		+++  NEW ANNOTATION: javax.annotation.Nullable
+	+++  NEW METHOD: PUBLIC(+) double getDouble(java.lang.String, double)
+	+++  NEW METHOD: PUBLIC(+) java.time.Duration getDuration(java.lang.String)
+		+++  NEW ANNOTATION: java.lang.Deprecated
+		+++  NEW ANNOTATION: javax.annotation.Nullable
+	+++  NEW METHOD: PUBLIC(+) java.time.Duration getDuration(java.lang.String, java.time.Duration)
+	+++  NEW METHOD: PUBLIC(+) java.lang.Integer getInt(java.lang.String)
+		+++  NEW ANNOTATION: java.lang.Deprecated
+		+++  NEW ANNOTATION: javax.annotation.Nullable
+	+++  NEW METHOD: PUBLIC(+) int getInt(java.lang.String, int)
+	+++  NEW METHOD: PUBLIC(+) java.util.List getList(java.lang.String)
+		+++  NEW ANNOTATION: java.lang.Deprecated
+	+++  NEW METHOD: PUBLIC(+) java.util.List getList(java.lang.String, java.util.List)
+	+++  NEW METHOD: PUBLIC(+) java.lang.Long getLong(java.lang.String)
+		+++  NEW ANNOTATION: java.lang.Deprecated
+		+++  NEW ANNOTATION: javax.annotation.Nullable
+	+++  NEW METHOD: PUBLIC(+) long getLong(java.lang.String, long)
+	+++  NEW METHOD: PUBLIC(+) java.util.Map getMap(java.lang.String)
+		+++  NEW ANNOTATION: java.lang.Deprecated
+	+++  NEW METHOD: PUBLIC(+) java.util.Map getMap(java.lang.String, java.util.Map)
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getString(java.lang.String)
+		+++  NEW ANNOTATION: javax.annotation.Nullable
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getString(java.lang.String, java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) void internalInitializeConfig(io.opentelemetry.instrumentation.api.config.Config)
+	+++  NEW METHOD: PUBLIC(+) boolean isAgentDebugEnabled()
+	+++  NEW METHOD: PUBLIC(+) boolean isInstrumentationEnabled(java.lang.Iterable, boolean)
+	+++  NEW METHOD: PUBLIC(+) boolean isInstrumentationPropertyEnabled(java.lang.Iterable, java.lang.String, boolean)
++++  NEW CLASS: PUBLIC(+) FINAL(+) io.opentelemetry.instrumentation.api.config.ConfigBuilder  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW CONSTRUCTOR: PUBLIC(+) ConfigBuilder()
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.instrumentation.api.config.ConfigBuilder addProperty(java.lang.String, java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.instrumentation.api.config.Config build()
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.instrumentation.api.config.ConfigBuilder readEnvironmentVariables()
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.instrumentation.api.config.ConfigBuilder readProperties(java.util.Properties)
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.instrumentation.api.config.ConfigBuilder readProperties(java.util.Map)
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.instrumentation.api.config.ConfigBuilder readSystemProperties()
++++  NEW CLASS: PUBLIC(+) io.opentelemetry.instrumentation.api.config.ConfigParsingException  (compatible)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: java.io.Serializable
+	+++  NEW CONSTRUCTOR: PUBLIC(+) ConfigParsingException(java.lang.String)
+	+++  NEW CONSTRUCTOR: PUBLIC(+) ConfigParsingException(java.lang.String, java.lang.Throwable)
++++  NEW CLASS: PUBLIC(+) FINAL(+) io.opentelemetry.instrumentation.api.config.ExperimentalConfig  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW CONSTRUCTOR: PUBLIC(+) ExperimentalConfig(io.opentelemetry.instrumentation.api.config.Config)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.config.ExperimentalConfig get()
+	+++  NEW METHOD: PUBLIC(+) boolean suppressControllerSpans()
+	+++  NEW METHOD: PUBLIC(+) boolean suppressMessagingReceiveSpans()
+	+++  NEW METHOD: PUBLIC(+) boolean suppressViewSpans()
++++  NEW CLASS: PUBLIC(+) FINAL(+) io.opentelemetry.instrumentation.api.db.RedisCommandSanitizer  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) java.lang.String sanitize(java.lang.String, java.util.List)
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) STATIC(+) io.opentelemetry.instrumentation.api.db.RedisCommandSanitizer$CommandSanitizer  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) java.lang.String argToString(java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.lang.String sanitize(java.lang.String, java.util.List)
++++  NEW CLASS: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.db.RedisCommandSanitizer$CommandSanitizer$CommandAndNumArgs  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: io.opentelemetry.instrumentation.api.db.RedisCommandSanitizer$CommandSanitizer
+	+++  NEW CONSTRUCTOR: PUBLIC(+) RedisCommandSanitizer$CommandSanitizer$CommandAndNumArgs(int)
+	+++  NEW METHOD: PUBLIC(+) java.lang.String sanitize(java.lang.String, java.util.List)
++++  NEW ENUM: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.db.RedisCommandSanitizer$CommandSanitizer$Eval  (compatible)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: java.lang.Comparable
+	+++  NEW INTERFACE: io.opentelemetry.instrumentation.api.db.RedisCommandSanitizer$CommandSanitizer
+	+++  NEW INTERFACE: java.io.Serializable
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.db.RedisCommandSanitizer$CommandSanitizer$Eval INSTANCE
+	+++  NEW METHOD: PUBLIC(+) java.lang.String sanitize(java.lang.String, java.util.List)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.db.RedisCommandSanitizer$CommandSanitizer$Eval valueOf(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.db.RedisCommandSanitizer$CommandSanitizer$Eval[] values()
++++  NEW ENUM: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.db.RedisCommandSanitizer$CommandSanitizer$KeepAllArgs  (compatible)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: java.lang.Comparable
+	+++  NEW INTERFACE: io.opentelemetry.instrumentation.api.db.RedisCommandSanitizer$CommandSanitizer
+	+++  NEW INTERFACE: java.io.Serializable
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.db.RedisCommandSanitizer$CommandSanitizer$KeepAllArgs INSTANCE
+	+++  NEW METHOD: PUBLIC(+) java.lang.String sanitize(java.lang.String, java.util.List)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.db.RedisCommandSanitizer$CommandSanitizer$KeepAllArgs valueOf(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.db.RedisCommandSanitizer$CommandSanitizer$KeepAllArgs[] values()
++++  NEW CLASS: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.db.RedisCommandSanitizer$CommandSanitizer$MultiKeyValue  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: io.opentelemetry.instrumentation.api.db.RedisCommandSanitizer$CommandSanitizer
+	+++  NEW CONSTRUCTOR: PUBLIC(+) RedisCommandSanitizer$CommandSanitizer$MultiKeyValue(int)
+	+++  NEW METHOD: PUBLIC(+) java.lang.String sanitize(java.lang.String, java.util.List)
++++  NEW ENUM: PUBLIC(+) FINAL(+) io.opentelemetry.instrumentation.api.db.SqlDialect  (compatible)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: java.lang.Comparable
+	+++  NEW INTERFACE: java.io.Serializable
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.db.SqlDialect DEFAULT
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.db.SqlDialect COUCHBASE
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.db.SqlDialect valueOf(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.db.SqlDialect[] values()
++++  NEW CLASS: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.db.SqlStatementInfo  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW CONSTRUCTOR: PUBLIC(+) SqlStatementInfo()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.db.SqlStatementInfo create(java.lang.String, java.lang.String, java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.lang.String getFullStatement()
+		+++  NEW ANNOTATION: javax.annotation.Nullable
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.lang.String getOperation()
+		+++  NEW ANNOTATION: javax.annotation.Nullable
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.lang.String getTable()
+		+++  NEW ANNOTATION: javax.annotation.Nullable
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.instrumentation.api.db.SqlStatementInfo mapTable(java.util.function.Function)
++++  NEW CLASS: PUBLIC(+) FINAL(+) io.opentelemetry.instrumentation.api.db.SqlStatementSanitizer  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.db.SqlStatementInfo sanitize(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.db.SqlStatementInfo sanitize(java.lang.String, io.opentelemetry.instrumentation.api.db.SqlDialect)
++++  NEW CLASS: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.field.VirtualField  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW CONSTRUCTOR: PUBLIC(+) VirtualField()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.field.VirtualField find(java.lang.Class, java.lang.Class)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.lang.Object get(java.lang.Object)
+		+++  NEW ANNOTATION: javax.annotation.Nullable
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) void set(java.lang.Object, java.lang.Object)
++++  NEW CLASS: PUBLIC(+) FINAL(+) io.opentelemetry.instrumentation.api.InstrumentationVersion  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) java.lang.String VERSION
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.instrumenter.AttributesExtractor  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.instrumenter.AttributesExtractor constant(io.opentelemetry.api.common.AttributeKey, java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) void onEnd(io.opentelemetry.api.common.AttributesBuilder, java.lang.Object, java.lang.Object, java.lang.Throwable)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) void onStart(io.opentelemetry.api.common.AttributesBuilder, java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) void set(io.opentelemetry.api.common.AttributesBuilder, io.opentelemetry.api.common.AttributeKey, java.lang.Object)
++++  NEW CLASS: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.instrumenter.code.CodeAttributesExtractor  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: io.opentelemetry.instrumentation.api.instrumenter.AttributesExtractor
+	+++  NEW CONSTRUCTOR: PUBLIC(+) CodeAttributesExtractor()
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) void onEnd(io.opentelemetry.api.common.AttributesBuilder, java.lang.Object, java.lang.Object, java.lang.Throwable)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) void onStart(io.opentelemetry.api.common.AttributesBuilder, java.lang.Object)
++++  NEW CLASS: PUBLIC(+) FINAL(+) io.opentelemetry.instrumentation.api.instrumenter.code.CodeSpanNameExtractor  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: io.opentelemetry.instrumentation.api.instrumenter.SpanNameExtractor
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.instrumenter.SpanNameExtractor create(io.opentelemetry.instrumentation.api.instrumenter.code.CodeAttributesExtractor)
+	+++  NEW METHOD: PUBLIC(+) java.lang.String extract(java.lang.Object)
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.instrumenter.ContextCustomizer  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) io.opentelemetry.context.Context start(io.opentelemetry.context.Context, java.lang.Object, io.opentelemetry.api.common.Attributes)
+	+++  NEW ANNOTATION: java.lang.FunctionalInterface
++++  NEW CLASS: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.instrumenter.db.DbAttributesExtractor  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: io.opentelemetry.instrumentation.api.instrumenter.AttributesExtractor
+	+++  NEW CONSTRUCTOR: PUBLIC(+) DbAttributesExtractor()
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) void onEnd(io.opentelemetry.api.common.AttributesBuilder, java.lang.Object, java.lang.Object, java.lang.Throwable)
+	+++  NEW METHOD: PUBLIC(+) void onStart(io.opentelemetry.api.common.AttributesBuilder, java.lang.Object)
++++  NEW CLASS: PUBLIC(+) FINAL(+) io.opentelemetry.instrumentation.api.instrumenter.db.DbSpanNameExtractor  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: io.opentelemetry.instrumentation.api.instrumenter.SpanNameExtractor
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.instrumenter.SpanNameExtractor create(io.opentelemetry.instrumentation.api.instrumenter.db.DbAttributesExtractor)
+	+++  NEW METHOD: PUBLIC(+) java.lang.String extract(java.lang.Object)
++++  NEW CLASS: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.instrumenter.db.SqlAttributesExtractor  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: io.opentelemetry.instrumentation.api.instrumenter.AttributesExtractor
+	+++  NEW CONSTRUCTOR: PUBLIC(+) SqlAttributesExtractor()
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) void onStart(io.opentelemetry.api.common.AttributesBuilder, java.lang.Object)
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.instrumenter.ErrorCauseExtractor  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.lang.Throwable extractCause(java.lang.Throwable)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.instrumenter.ErrorCauseExtractor jdk()
+	+++  NEW ANNOTATION: java.lang.FunctionalInterface
++++  NEW CLASS: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.instrumenter.http.CapturedHttpHeaders  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.instrumenter.http.CapturedHttpHeaders client(io.opentelemetry.instrumentation.api.config.Config)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.instrumenter.http.CapturedHttpHeaders create(java.util.List, java.util.List)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.instrumenter.http.CapturedHttpHeaders empty()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.util.List requestHeaders()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.util.List responseHeaders()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.instrumenter.http.CapturedHttpHeaders server(io.opentelemetry.instrumentation.api.config.Config)
++++  NEW CLASS: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.instrumenter.http.HttpClientAttributesExtractor  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: io.opentelemetry.instrumentation.api.instrumenter.AttributesExtractor
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) void onEnd(io.opentelemetry.api.common.AttributesBuilder, java.lang.Object, java.lang.Object, java.lang.Throwable)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) void onStart(io.opentelemetry.api.common.AttributesBuilder, java.lang.Object)
++++  NEW CLASS: PUBLIC(+) FINAL(+) io.opentelemetry.instrumentation.api.instrumenter.http.HttpClientMetrics  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: io.opentelemetry.instrumentation.api.instrumenter.RequestListener
+	+++  NEW METHOD: PUBLIC(+) void end(io.opentelemetry.context.Context, io.opentelemetry.api.common.Attributes, long)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.instrumenter.RequestMetrics get()
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.context.Context start(io.opentelemetry.context.Context, io.opentelemetry.api.common.Attributes, long)
++++  NEW CLASS: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.instrumenter.http.HttpCommonAttributesExtractor  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: io.opentelemetry.instrumentation.api.instrumenter.AttributesExtractor
+	+++  NEW METHOD: PUBLIC(+) void onEnd(io.opentelemetry.api.common.AttributesBuilder, java.lang.Object, java.lang.Object, java.lang.Throwable)
+	+++  NEW METHOD: PUBLIC(+) void onStart(io.opentelemetry.api.common.AttributesBuilder, java.lang.Object)
++++  NEW CLASS: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.instrumenter.http.HttpServerAttributesExtractor  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: io.opentelemetry.instrumentation.api.instrumenter.AttributesExtractor
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) void onEnd(io.opentelemetry.api.common.AttributesBuilder, java.lang.Object, java.lang.Object, java.lang.Throwable)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) void onStart(io.opentelemetry.api.common.AttributesBuilder, java.lang.Object)
++++  NEW CLASS: PUBLIC(+) FINAL(+) io.opentelemetry.instrumentation.api.instrumenter.http.HttpServerMetrics  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: io.opentelemetry.instrumentation.api.instrumenter.RequestListener
+	+++  NEW METHOD: PUBLIC(+) void end(io.opentelemetry.context.Context, io.opentelemetry.api.common.Attributes, long)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.instrumenter.RequestMetrics get()
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.context.Context start(io.opentelemetry.context.Context, io.opentelemetry.api.common.Attributes, long)
++++  NEW CLASS: PUBLIC(+) FINAL(+) io.opentelemetry.instrumentation.api.instrumenter.http.HttpSpanNameExtractor  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: io.opentelemetry.instrumentation.api.instrumenter.SpanNameExtractor
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.instrumenter.SpanNameExtractor create(io.opentelemetry.instrumentation.api.instrumenter.http.HttpCommonAttributesExtractor)
+	+++  NEW METHOD: PUBLIC(+) java.lang.String extract(java.lang.Object)
++++  NEW CLASS: PUBLIC(+) FINAL(+) io.opentelemetry.instrumentation.api.instrumenter.http.HttpSpanStatusExtractor  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: io.opentelemetry.instrumentation.api.instrumenter.SpanStatusExtractor
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.instrumenter.SpanStatusExtractor create(io.opentelemetry.instrumentation.api.instrumenter.http.HttpClientAttributesExtractor)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.instrumenter.SpanStatusExtractor create(io.opentelemetry.instrumentation.api.instrumenter.http.HttpServerAttributesExtractor)
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.api.trace.StatusCode extract(java.lang.Object, java.lang.Object, java.lang.Throwable)
++++  NEW CLASS: PUBLIC(+) io.opentelemetry.instrumentation.api.instrumenter.Instrumenter  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.instrumenter.InstrumenterBuilder builder(io.opentelemetry.api.OpenTelemetry, java.lang.String, io.opentelemetry.instrumentation.api.instrumenter.SpanNameExtractor)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.instrumenter.InstrumenterBuilder builder(io.opentelemetry.api.OpenTelemetry, java.lang.String, java.lang.String, io.opentelemetry.instrumentation.api.instrumenter.SpanNameExtractor)
+	+++  NEW METHOD: PUBLIC(+) void end(io.opentelemetry.context.Context, java.lang.Object, java.lang.Object, java.lang.Throwable)
+	+++  NEW METHOD: PUBLIC(+) boolean shouldStart(io.opentelemetry.context.Context, java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.context.Context start(io.opentelemetry.context.Context, java.lang.Object)
++++  NEW CLASS: PUBLIC(+) FINAL(+) io.opentelemetry.instrumentation.api.instrumenter.InstrumenterBuilder  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.instrumentation.api.instrumenter.InstrumenterBuilder addAttributesExtractor(io.opentelemetry.instrumentation.api.instrumenter.AttributesExtractor)
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.instrumentation.api.instrumenter.InstrumenterBuilder addAttributesExtractors(java.lang.Iterable)
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.instrumentation.api.instrumenter.InstrumenterBuilder addAttributesExtractors(io.opentelemetry.instrumentation.api.instrumenter.AttributesExtractor[])
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.instrumentation.api.instrumenter.InstrumenterBuilder addContextCustomizer(io.opentelemetry.instrumentation.api.instrumenter.ContextCustomizer)
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.instrumentation.api.instrumenter.InstrumenterBuilder addRequestMetrics(io.opentelemetry.instrumentation.api.instrumenter.RequestMetrics)
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.instrumentation.api.instrumenter.InstrumenterBuilder addSpanLinksExtractor(io.opentelemetry.instrumentation.api.instrumenter.SpanLinksExtractor)
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.instrumentation.api.instrumenter.Instrumenter newClientInstrumenter(io.opentelemetry.context.propagation.TextMapSetter)
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.instrumentation.api.instrumenter.Instrumenter newConsumerInstrumenter(io.opentelemetry.context.propagation.TextMapGetter)
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.instrumentation.api.instrumenter.Instrumenter newInstrumenter()
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.instrumentation.api.instrumenter.Instrumenter newInstrumenter(io.opentelemetry.instrumentation.api.instrumenter.SpanKindExtractor)
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.instrumentation.api.instrumenter.Instrumenter newProducerInstrumenter(io.opentelemetry.context.propagation.TextMapSetter)
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.instrumentation.api.instrumenter.Instrumenter newServerInstrumenter(io.opentelemetry.context.propagation.TextMapGetter)
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.instrumentation.api.instrumenter.InstrumenterBuilder setDisabled(boolean)
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.instrumentation.api.instrumenter.InstrumenterBuilder setErrorCauseExtractor(io.opentelemetry.instrumentation.api.instrumenter.ErrorCauseExtractor)
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.instrumentation.api.instrumenter.InstrumenterBuilder setSpanStatusExtractor(io.opentelemetry.instrumentation.api.instrumenter.SpanStatusExtractor)
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.instrumentation.api.instrumenter.InstrumenterBuilder setTimeExtractor(io.opentelemetry.instrumentation.api.instrumenter.TimeExtractor)
++++  NEW ENUM: PUBLIC(+) FINAL(+) io.opentelemetry.instrumentation.api.instrumenter.messaging.MessageOperation  (compatible)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: java.lang.Comparable
+	+++  NEW INTERFACE: java.io.Serializable
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.instrumenter.messaging.MessageOperation PROCESS
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.instrumenter.messaging.MessageOperation SEND
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.instrumenter.messaging.MessageOperation RECEIVE
+	+++  NEW METHOD: PUBLIC(+) java.lang.String operationName()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.instrumenter.messaging.MessageOperation valueOf(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.instrumenter.messaging.MessageOperation[] values()
++++  NEW CLASS: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.instrumenter.messaging.MessagingAttributesExtractor  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: io.opentelemetry.instrumentation.api.instrumenter.AttributesExtractor
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) java.lang.String TEMP_DESTINATION_NAME
+	+++  NEW CONSTRUCTOR: PUBLIC(+) MessagingAttributesExtractor()
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) void onEnd(io.opentelemetry.api.common.AttributesBuilder, java.lang.Object, java.lang.Object, java.lang.Throwable)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) void onStart(io.opentelemetry.api.common.AttributesBuilder, java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.instrumenter.messaging.MessageOperation operation()
++++  NEW CLASS: PUBLIC(+) FINAL(+) io.opentelemetry.instrumentation.api.instrumenter.messaging.MessagingSpanNameExtractor  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: io.opentelemetry.instrumentation.api.instrumenter.SpanNameExtractor
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.instrumenter.SpanNameExtractor create(io.opentelemetry.instrumentation.api.instrumenter.messaging.MessagingAttributesExtractor)
+	+++  NEW METHOD: PUBLIC(+) java.lang.String extract(java.lang.Object)
++++  NEW CLASS: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.instrumenter.net.InetSocketAddressNetClientAttributesExtractor  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: io.opentelemetry.instrumentation.api.instrumenter.AttributesExtractor
+	+++  NEW CONSTRUCTOR: PUBLIC(+) InetSocketAddressNetClientAttributesExtractor()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.net.InetSocketAddress getAddress(java.lang.Object, java.lang.Object)
+		+++  NEW ANNOTATION: javax.annotation.Nullable
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) java.lang.String peerIp(java.lang.Object, java.lang.Object)
+		+++  NEW ANNOTATION: javax.annotation.Nullable
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) java.lang.String peerName(java.lang.Object, java.lang.Object)
+		+++  NEW ANNOTATION: javax.annotation.Nullable
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) java.lang.Integer peerPort(java.lang.Object, java.lang.Object)
+		+++  NEW ANNOTATION: javax.annotation.Nullable
++++  NEW CLASS: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.instrumenter.net.InetSocketAddressNetServerAttributesExtractor  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: io.opentelemetry.instrumentation.api.instrumenter.AttributesExtractor
+	+++  NEW CONSTRUCTOR: PUBLIC(+) InetSocketAddressNetServerAttributesExtractor()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.net.InetSocketAddress getAddress(java.lang.Object)
+		+++  NEW ANNOTATION: javax.annotation.Nullable
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) java.lang.String peerIp(java.lang.Object)
+		+++  NEW ANNOTATION: javax.annotation.Nullable
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) java.lang.String peerName(java.lang.Object)
+		+++  NEW ANNOTATION: javax.annotation.Nullable
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) java.lang.Integer peerPort(java.lang.Object)
+		+++  NEW ANNOTATION: javax.annotation.Nullable
++++  NEW CLASS: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.instrumenter.net.NetClientAttributesExtractor  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: io.opentelemetry.instrumentation.api.instrumenter.AttributesExtractor
+	+++  NEW CONSTRUCTOR: PUBLIC(+) NetClientAttributesExtractor()
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) void onEnd(io.opentelemetry.api.common.AttributesBuilder, java.lang.Object, java.lang.Object, java.lang.Throwable)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) void onStart(io.opentelemetry.api.common.AttributesBuilder, java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.lang.String peerIp(java.lang.Object, java.lang.Object)
+		+++  NEW ANNOTATION: javax.annotation.Nullable
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.lang.String peerName(java.lang.Object, java.lang.Object)
+		+++  NEW ANNOTATION: javax.annotation.Nullable
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.lang.Integer peerPort(java.lang.Object, java.lang.Object)
+		+++  NEW ANNOTATION: javax.annotation.Nullable
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.lang.String transport(java.lang.Object, java.lang.Object)
+		+++  NEW ANNOTATION: javax.annotation.Nullable
++++  NEW CLASS: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.instrumenter.net.NetServerAttributesExtractor  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: io.opentelemetry.instrumentation.api.instrumenter.AttributesExtractor
+	+++  NEW CONSTRUCTOR: PUBLIC(+) NetServerAttributesExtractor()
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) void onEnd(io.opentelemetry.api.common.AttributesBuilder, java.lang.Object, java.lang.Object, java.lang.Throwable)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) void onStart(io.opentelemetry.api.common.AttributesBuilder, java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.lang.String peerIp(java.lang.Object)
+		+++  NEW ANNOTATION: javax.annotation.Nullable
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.lang.String peerName(java.lang.Object)
+		+++  NEW ANNOTATION: javax.annotation.Nullable
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.lang.Integer peerPort(java.lang.Object)
+		+++  NEW ANNOTATION: javax.annotation.Nullable
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.lang.String transport(java.lang.Object)
+		+++  NEW ANNOTATION: javax.annotation.Nullable
++++  NEW CLASS: PUBLIC(+) FINAL(+) io.opentelemetry.instrumentation.api.instrumenter.PeerServiceAttributesExtractor  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: io.opentelemetry.instrumentation.api.instrumenter.AttributesExtractor
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.instrumenter.PeerServiceAttributesExtractor create(io.opentelemetry.instrumentation.api.instrumenter.net.NetClientAttributesExtractor)
+	+++  NEW METHOD: PUBLIC(+) void onEnd(io.opentelemetry.api.common.AttributesBuilder, java.lang.Object, java.lang.Object, java.lang.Throwable)
+	+++  NEW METHOD: PUBLIC(+) void onStart(io.opentelemetry.api.common.AttributesBuilder, java.lang.Object)
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.instrumenter.RequestListener  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) void end(io.opentelemetry.context.Context, io.opentelemetry.api.common.Attributes, long)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) io.opentelemetry.context.Context start(io.opentelemetry.context.Context, io.opentelemetry.api.common.Attributes, long)
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.instrumenter.RequestMetrics  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.instrumenter.RequestListener create(io.opentelemetry.api.metrics.Meter)
+	+++  NEW ANNOTATION: java.lang.FunctionalInterface
++++  NEW CLASS: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.instrumenter.rpc.RpcAttributesExtractor  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: io.opentelemetry.instrumentation.api.instrumenter.AttributesExtractor
+	+++  NEW CONSTRUCTOR: PUBLIC(+) RpcAttributesExtractor()
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) void onEnd(io.opentelemetry.api.common.AttributesBuilder, java.lang.Object, java.lang.Object, java.lang.Throwable)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) void onStart(io.opentelemetry.api.common.AttributesBuilder, java.lang.Object)
++++  NEW CLASS: PUBLIC(+) FINAL(+) io.opentelemetry.instrumentation.api.instrumenter.rpc.RpcClientMetrics  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: io.opentelemetry.instrumentation.api.instrumenter.RequestListener
+	+++  NEW METHOD: PUBLIC(+) void end(io.opentelemetry.context.Context, io.opentelemetry.api.common.Attributes, long)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.instrumenter.RequestMetrics get()
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.context.Context start(io.opentelemetry.context.Context, io.opentelemetry.api.common.Attributes, long)
++++  NEW CLASS: PUBLIC(+) FINAL(+) io.opentelemetry.instrumentation.api.instrumenter.rpc.RpcServerMetrics  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: io.opentelemetry.instrumentation.api.instrumenter.RequestListener
+	+++  NEW METHOD: PUBLIC(+) void end(io.opentelemetry.context.Context, io.opentelemetry.api.common.Attributes, long)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.instrumenter.RequestMetrics get()
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.context.Context start(io.opentelemetry.context.Context, io.opentelemetry.api.common.Attributes, long)
++++  NEW CLASS: PUBLIC(+) FINAL(+) io.opentelemetry.instrumentation.api.instrumenter.rpc.RpcSpanNameExtractor  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: io.opentelemetry.instrumentation.api.instrumenter.SpanNameExtractor
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.instrumenter.SpanNameExtractor create(io.opentelemetry.instrumentation.api.instrumenter.rpc.RpcAttributesExtractor)
+	+++  NEW METHOD: PUBLIC(+) java.lang.String extract(java.lang.Object)
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.instrumenter.SpanKindExtractor  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.instrumenter.SpanKindExtractor alwaysClient()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.instrumenter.SpanKindExtractor alwaysConsumer()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.instrumenter.SpanKindExtractor alwaysInternal()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.instrumenter.SpanKindExtractor alwaysProducer()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.instrumenter.SpanKindExtractor alwaysServer()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) io.opentelemetry.api.trace.SpanKind extract(java.lang.Object)
+	+++  NEW ANNOTATION: java.lang.FunctionalInterface
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.instrumenter.SpanLinksBuilder  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.instrumenter.SpanLinksBuilder addLink(io.opentelemetry.api.trace.SpanContext)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.instrumenter.SpanLinksBuilder addLink(io.opentelemetry.api.trace.SpanContext, io.opentelemetry.api.common.Attributes)
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.instrumenter.SpanLinksExtractor  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) void extract(io.opentelemetry.instrumentation.api.instrumenter.SpanLinksBuilder, io.opentelemetry.context.Context, java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.instrumenter.SpanLinksExtractor fromUpstreamRequest(io.opentelemetry.context.propagation.ContextPropagators, io.opentelemetry.context.propagation.TextMapGetter)
+	+++  NEW ANNOTATION: java.lang.FunctionalInterface
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.instrumenter.SpanNameExtractor  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.lang.String extract(java.lang.Object)
+	+++  NEW ANNOTATION: java.lang.FunctionalInterface
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.instrumenter.SpanStatusExtractor  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) io.opentelemetry.api.trace.StatusCode extract(java.lang.Object, java.lang.Object, java.lang.Throwable)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.instrumenter.SpanStatusExtractor getDefault()
+	+++  NEW ANNOTATION: java.lang.FunctionalInterface
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.instrumenter.TimeExtractor  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.time.Instant extractEndTime(java.lang.Object, java.lang.Object, java.lang.Throwable)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.time.Instant extractStartTime(java.lang.Object)
++++  NEW CLASS: PUBLIC(+) FINAL(+) io.opentelemetry.instrumentation.api.log.LoggingContextConstants  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) java.lang.String SPAN_ID
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) java.lang.String TRACE_FLAGS
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) java.lang.String TRACE_ID
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.servlet.ServerSpanNameSupplier  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.lang.String get(io.opentelemetry.context.Context, java.lang.Object)
+		+++  NEW ANNOTATION: javax.annotation.Nullable
+	+++  NEW ANNOTATION: java.lang.FunctionalInterface
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.servlet.ServerSpanNameTwoArgSupplier  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.lang.String get(io.opentelemetry.context.Context, java.lang.Object, java.lang.Object)
+		+++  NEW ANNOTATION: javax.annotation.Nullable
+	+++  NEW ANNOTATION: java.lang.FunctionalInterface
++++  NEW CLASS: PUBLIC(+) FINAL(+) io.opentelemetry.instrumentation.api.servlet.ServerSpanNaming  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.instrumenter.ContextCustomizer get()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) void updateServerSpanName(io.opentelemetry.context.Context, io.opentelemetry.instrumentation.api.servlet.ServerSpanNaming$Source, io.opentelemetry.instrumentation.api.servlet.ServerSpanNameSupplier, java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) void updateServerSpanName(io.opentelemetry.context.Context, io.opentelemetry.instrumentation.api.servlet.ServerSpanNaming$Source, io.opentelemetry.instrumentation.api.servlet.ServerSpanNameTwoArgSupplier, java.lang.Object, java.lang.Object)
++++  NEW ENUM: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.servlet.ServerSpanNaming$Source  (compatible)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW INTERFACE: java.lang.Comparable
+	+++  NEW INTERFACE: java.io.Serializable
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.servlet.ServerSpanNaming$Source FILTER
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.servlet.ServerSpanNaming$Source CONTROLLER
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.servlet.ServerSpanNaming$Source NESTED_CONTROLLER
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.servlet.ServerSpanNaming$Source CONTAINER
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.servlet.ServerSpanNaming$Source SERVLET
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.servlet.ServerSpanNaming$Source valueOf(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.servlet.ServerSpanNaming$Source[] values()
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.tracer.AttributeSetter  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) void setAttribute(io.opentelemetry.api.common.AttributeKey, java.lang.Object)
+	+++  NEW ANNOTATION: java.lang.FunctionalInterface
+	+++  NEW ANNOTATION: java.lang.Deprecated
++++  NEW CLASS: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.tracer.BaseTracer  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) void end(io.opentelemetry.context.Context)
+	+++  NEW METHOD: PUBLIC(+) void end(io.opentelemetry.context.Context, long)
+	+++  NEW METHOD: PUBLIC(+) void endExceptionally(io.opentelemetry.context.Context, java.lang.Throwable)
+	+++  NEW METHOD: PUBLIC(+) void endExceptionally(io.opentelemetry.context.Context, java.lang.Throwable, long)
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.context.Context extract(java.lang.Object, io.opentelemetry.context.propagation.TextMapGetter)
+	+++  NEW METHOD: PUBLIC(+) void inject(io.opentelemetry.context.Context, java.lang.Object, io.opentelemetry.context.propagation.TextMapSetter)
+	+++  NEW METHOD: PUBLIC(+) void onException(io.opentelemetry.context.Context, java.lang.Throwable)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) boolean shouldStartSpan(io.opentelemetry.context.Context, io.opentelemetry.api.trace.SpanKind)
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.context.Context startSpan(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.context.Context startSpan(java.lang.String, io.opentelemetry.api.trace.SpanKind)
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.context.Context startSpan(io.opentelemetry.context.Context, java.lang.String, io.opentelemetry.api.trace.SpanKind)
+	+++  NEW ANNOTATION: java.lang.Deprecated
++++  NEW CLASS: PUBLIC(+) FINAL(+) io.opentelemetry.instrumentation.api.tracer.ClassNames  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) java.lang.String simpleName(java.lang.Class)
++++  NEW CLASS: PUBLIC(+) FINAL(+) io.opentelemetry.instrumentation.api.tracer.ClientSpan  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) boolean exists(io.opentelemetry.context.Context)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.api.trace.Span fromContextOrNull(io.opentelemetry.context.Context)
+		+++  NEW ANNOTATION: javax.annotation.Nullable
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.context.Context with(io.opentelemetry.context.Context, io.opentelemetry.api.trace.Span)
+	+++  NEW ANNOTATION: java.lang.Deprecated
++++  NEW CLASS: PUBLIC(+) FINAL(+) io.opentelemetry.instrumentation.api.tracer.ConsumerSpan  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) boolean exists(io.opentelemetry.context.Context)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.api.trace.Span fromContextOrNull(io.opentelemetry.context.Context)
+		+++  NEW ANNOTATION: javax.annotation.Nullable
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.context.Context with(io.opentelemetry.context.Context, io.opentelemetry.api.trace.Span)
+	+++  NEW ANNOTATION: java.lang.Deprecated
++++  NEW CLASS: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.tracer.DatabaseClientTracer  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) java.lang.String conventionSpanName(java.lang.String, java.lang.String, java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) java.lang.String conventionSpanName(java.lang.String, java.lang.String, java.lang.String, java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) boolean shouldStartSpan(io.opentelemetry.context.Context)
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.context.Context startSpan(io.opentelemetry.context.Context, java.lang.Object, java.lang.Object)
+	+++  NEW ANNOTATION: java.lang.Deprecated
++++  NEW CLASS: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.tracer.HttpClientTracer  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) java.lang.String DEFAULT_SPAN_NAME
+	+++  NEW METHOD: PUBLIC(+) void end(io.opentelemetry.context.Context, java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) void end(io.opentelemetry.context.Context, java.lang.Object, long)
+	+++  NEW METHOD: PUBLIC(+) void endExceptionally(io.opentelemetry.context.Context, java.lang.Object, java.lang.Throwable)
+	+++  NEW METHOD: PUBLIC(+) void endExceptionally(io.opentelemetry.context.Context, java.lang.Object, java.lang.Throwable, long)
+	+++  NEW METHOD: PUBLIC(+) void endMaybeExceptionally(io.opentelemetry.context.Context, java.lang.Object, java.lang.Throwable)
+	+++  NEW METHOD: PUBLIC(+) boolean shouldStartSpan(io.opentelemetry.context.Context)
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.context.Context startSpan(io.opentelemetry.context.Context, java.lang.Object, java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.context.Context startSpan(io.opentelemetry.api.trace.SpanKind, io.opentelemetry.context.Context, java.lang.Object, java.lang.Object, long)
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.context.Context startSpan(io.opentelemetry.context.Context, java.lang.Object, java.lang.Object, long)
+	+++  NEW ANNOTATION: java.lang.Deprecated
++++  NEW CLASS: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.tracer.HttpServerTracer  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) java.lang.String CONTEXT_ATTRIBUTE
+	+++  NEW METHOD: PUBLIC(+) void end(io.opentelemetry.context.Context, java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) void end(io.opentelemetry.context.Context, java.lang.Object, long)
+	+++  NEW METHOD: PUBLIC(+) void endExceptionally(io.opentelemetry.context.Context, java.lang.Throwable)
+	+++  NEW METHOD: PUBLIC(+) void endExceptionally(io.opentelemetry.context.Context, java.lang.Throwable, java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) void endExceptionally(io.opentelemetry.context.Context, java.lang.Throwable, java.lang.Object, long)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) io.opentelemetry.context.Context getServerContext(java.lang.Object)
+		+++  NEW ANNOTATION: javax.annotation.Nullable
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.api.trace.Span getServerSpan(java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.context.Context startSpan(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.reflect.Method)
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.context.Context startSpan(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) io.opentelemetry.context.Context startSpan(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.String, long)
+	+++  NEW ANNOTATION: java.lang.Deprecated
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.tracer.HttpStatusConverter  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.tracer.HttpStatusConverter SERVER
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.tracer.HttpStatusConverter CLIENT
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) io.opentelemetry.api.trace.StatusCode statusFromHttpStatus(int)
++++  NEW CLASS: PUBLIC(+) FINAL(+) io.opentelemetry.instrumentation.api.tracer.net.NetPeerAttributes  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) io.opentelemetry.instrumentation.api.tracer.net.NetPeerAttributes INSTANCE
+	+++  NEW CONSTRUCTOR: PUBLIC(+) NetPeerAttributes()
+	+++  NEW CONSTRUCTOR: PUBLIC(+) NetPeerAttributes(java.util.Map)
+	+++  NEW METHOD: PUBLIC(+) void setNetPeer(io.opentelemetry.api.trace.Span, java.net.InetSocketAddress)
+	+++  NEW METHOD: PUBLIC(+) void setNetPeer(io.opentelemetry.api.trace.SpanBuilder, java.net.InetSocketAddress)
+	+++  NEW METHOD: PUBLIC(+) void setNetPeer(io.opentelemetry.instrumentation.api.tracer.AttributeSetter, java.net.InetSocketAddress)
+	+++  NEW METHOD: PUBLIC(+) void setNetPeer(io.opentelemetry.api.trace.SpanBuilder, java.net.InetAddress, int)
+	+++  NEW METHOD: PUBLIC(+) void setNetPeer(io.opentelemetry.api.trace.Span, java.lang.String, java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) void setNetPeer(io.opentelemetry.api.trace.Span, java.lang.String, java.lang.String, int)
+	+++  NEW METHOD: PUBLIC(+) void setNetPeer(io.opentelemetry.instrumentation.api.tracer.AttributeSetter, java.lang.String, java.lang.String, int)
+	+++  NEW ANNOTATION: java.lang.Deprecated
++++  NEW CLASS: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.tracer.RpcClientTracer  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW ANNOTATION: java.lang.Deprecated
++++  NEW CLASS: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.tracer.RpcServerTracer  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW ANNOTATION: java.lang.Deprecated
++++  NEW CLASS: PUBLIC(+) FINAL(+) io.opentelemetry.instrumentation.api.tracer.ServerSpan  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) boolean exists(io.opentelemetry.context.Context)
+		+++  NEW ANNOTATION: java.lang.Deprecated
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.api.trace.Span fromContextOrNull(io.opentelemetry.context.Context)
+		+++  NEW ANNOTATION: javax.annotation.Nullable
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.context.Context with(io.opentelemetry.context.Context, io.opentelemetry.api.trace.Span)
+		+++  NEW ANNOTATION: java.lang.Deprecated
++++  NEW CLASS: PUBLIC(+) FINAL(+) io.opentelemetry.instrumentation.api.tracer.SpanNames  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) java.lang.String fromMethod(java.lang.reflect.Method)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) java.lang.String fromMethod(java.lang.Class, java.lang.reflect.Method)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) java.lang.String fromMethod(io.opentelemetry.instrumentation.api.util.ClassAndMethod)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) java.lang.String fromMethod(java.lang.Class, java.lang.String)
++++  NEW CLASS: PUBLIC(+) ABSTRACT(+) io.opentelemetry.instrumentation.api.util.ClassAndMethod  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 52.0 <- n.a.
+	+++  NEW CONSTRUCTOR: PUBLIC(+) ClassAndMethod()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) io.opentelemetry.instrumentation.api.util.ClassAndMethod create(java.lang.Class, java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.lang.Class declaringClass()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.lang.String methodName()
